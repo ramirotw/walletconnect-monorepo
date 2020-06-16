@@ -43,9 +43,14 @@ export function isBrowser(): boolean {
 
 export function unsafeGetFromWindow<T>(name: string): T | undefined {
   let res: T | undefined = undefined;
-  if (typeof window !== "undefined" && typeof window[name] !== "undefined") {
-    res = window[name];
+  try {
+    if (typeof window !== "undefined" && typeof window[name] !== "undefined") {
+      res = window[name];
+    }
+  } catch (e) {
+    console.error(e);
   }
+
   return res;
 }
 
