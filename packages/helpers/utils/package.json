@@ -1,6 +1,6 @@
 {
   "name": "@walletconnect/utils",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Utility Library for WalletConnect",
   "scripts": {
     "clean": "rm -rf dist",
@@ -8,7 +8,8 @@
     "build:cjs": "npx tsc -p tsconfig.cjs.json",
     "build:umd": "webpack",
     "build": "run-s build:pre build:cjs build:umd",
-    "test": "tsdx test ./test"
+    "test": "tsdx test ./test",
+    "prepare": "npm run build"
   },
   "keywords": [
     "wallet",
